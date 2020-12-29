@@ -13,6 +13,28 @@ ___
 ___
 
 *new 2020:*
+
+___
+
+### **cube_ex_tools**:
+
+Tools that I made for [Cubes experiment](https://danilw.itch.io/cubes-experiment) demo. 
+
+**Frame_capture** - capture animation to use in *GLES2 particle-like*. **Main point is** - to pre-record some physics-animation that uses lots of CPU time when it in real-time, like sparks that bounce of floor - just record that bouncing animation and play in the released project with 0% CPU usage. (include two scenes - scene and scene2, each using own animation and script)
+
+*frame_view_example* - example project that include shaders. This is example of using captured frame. **[Live example](https://danilw.github.io/godot-utils-and-other/frame_view/frame_view_example.html)** *WebGL build of this example*. Mesh *part_16x16.mesh* used for particles has `UV2` that can be used as particle UV `ALBEDO=texture(<particle_texture>,UV2).rgb;` in *capture.shader*.
+
+**Panorama render** - *will be added latter*.
+
+**Trails** on mace hit animation - I used this [gm_trail](https://github.com/HungryProton/gm_trail) addon for that.
+
+*Shaders*:
+
+**Reprojection UV** - Homography and Image-Wrap reprojection logic [shaderetoy link](https://www.shadertoy.com/view/tdyBRz).
+
+Graphic shaders from *Cubes experiment* I will publish latter.
+
+
 ___
 
 ### **particle_system_effects_Godot3**:
@@ -175,10 +197,13 @@ ___
 **Cubemap to panorama** convertor [live link](https://danilw.github.io/GLSL-howto/cubemap_to_panorama_js/cubemap_to_panorama.html) 
 
 **Godot-particles-collision** *unfinished* particle collision shader for Godot [source repo](https://github.com/danilw/Godot-particles-collision)
-
+___
 
 
 ### Graphic
+
+**cube_ex_tools** tools that I used to make this project on video
+[![cubes_experiment](https://danilw.github.io/godot-utils-and-other/yt_cubes.png)](https://youtu.be/gfd7xkN4xoY)
 
 **particle_system_effects_Godot3** video
 [![particle_system_effects_Godot3](https://danilw.github.io/godot-utils-and-other/particle_system_effects_Godot3/yt.png)](https://youtu.be/bTyJaRbwBZA)
