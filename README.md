@@ -1,6 +1,6 @@
 **update 2019 (actual in 2020)**
 
-gitlab mirror [https://gitlab.com/danilw](https://gitlab.com/danilw), untill I can update github repo I will (depends of github rules[(region block)](https://danilw.github.io/GLSL-howto/1.png) updates based on U.S. laws)
+gitlab mirror [https://gitlab.com/danilw/godot-utils-and-other](https://gitlab.com/danilw/godot-utils-and-other), untill I can update github repo I will (depends of github rules[(region block)](https://danilw.github.io/GLSL-howto/1.png) updates based on U.S. laws)
 
 # godot-utils-and-other
 **what is it** my test projects using Godot. I do not recomend use this code for learning.
@@ -32,7 +32,7 @@ Tools that I made for [Cubes experiment](https://danilw.itch.io/cubes-experiment
 
 **Reprojection UV** - Homography and Image-Wrap reprojection logic [shaderetoy link](https://www.shadertoy.com/view/tdyBRz).
 
-Graphic shaders from *Cubes experiment* I will publish latter.
+**Graphic shaders** from *Cubes experiment* [shadertoy link](https://www.shadertoy.com/view/WtdcW4).
 
 
 ___
@@ -41,6 +41,8 @@ ___
 
 Some 3d particle effects for Godot, using custom particle and fragment shaders. And decals. *Glow not used*. Used **Godot 3.2.2-stable** without modifications.
 
+One of shaders in this project has *bug in old Nvidia drivers 341.49* look this [link to issues](https://github.com/danilw/godot-utils-and-other/issues/6).
+
 **License -** all shader code under **MIT license**. **Warning -** all *3d models under CC non-comercial*, link to [list of all used resources](https://github.com/danilw/godot-utils-and-other/blob/master/particle_system_effects_Godot3/USED_RESOURCES_LINKS.md), also used sound file from [https://patrickdearteaga.com](patrickdearteaga.com)
 
 **Play -** live WebGL2 or download bin builds form **[itch.io link](https://danilw.itch.io/particle-effects-godot3)**.
@@ -48,6 +50,14 @@ Some 3d particle effects for Godot, using custom particle and fragment shaders. 
 **Debug menu** - move mouse to left top corner.
 
 **Description:**
+
+This project has **small misstake in sound texture implementation** - sound texture binded to shaders after srgb convertion(*this is my mistake*), example in node `debug/audio/audio` its shader [shaders/debug/debug_audio.shader](https://github.com/danilw/godot-utils-and-other/blob/master/particle_system_effects_Godot3/shaders/debug/debug_audio.shader) has this code:
+
+```
+uniform sampler2D iChannel0 : hint_black;
+```
+
+` hint_black` means that Godot will apply srgb convertion to this texture before use in shader, *this is bug* I did not fix it in this build, if you need audio texture **remove `:hint_` flag from shader**, **I mean audio texture implementation is correct in the [audio.gd](https://github.com/danilw/godot-utils-and-other/blob/master/particle_system_effects_Godot3/scripts/audio.gd) script but because mistake in shaders it has not correct result.**
 
 **1.** Lines draw with antialiasing, two types of antialiasing - *using mipmap from texture* or *using `dFd` procedural without textures*. **The point** - use antialiasing without texture needed. Shader code in [particle_lineAA_base.shader](https://github.com/danilw/godot-utils-and-other/blob/master/particle_system_effects_Godot3/shaders/particle_lineAA_base.shader) include all 3 types of drawing for test, uncomment needed.
 
@@ -185,9 +195,11 @@ ___
 
 *new small:*
 
+**gpu_indexed_particles_as_sprites** example project of using GPU particles and its *CUSTOM-value* transform feedback, also example of using buffers(viewports/fbo) instead of *CUSTOM* and sending 32bit float data from GDScript as texture data to shader [source code in zip](https://danilw.github.io/godot-utils-and-other/gpu_indexed_particles_as_sprites.zip) and [screenshot link](https://danilw.github.io/godot-utils-and-other/gpu_indexed_particles_as_sprites.png)
+
 **2d_ex_physics** simply(100 lines of code) circle collision with gravity on GDScript, from my [old project](https://youtu.be/lVCIEaFEMO4), check [video](https://youtu.be/zOYQ6vljZSI) and [live_web](https://danilw.github.io/godot-utils-and-other/2d_ex_physics/web/2d_ex_physics.html)
 
-2d explossion effects [video](https://youtu.be/h7C2-YMFn94) [src1](https://danilw.github.io/godot-utils-and-other/2d_explossions/explossion_no_bb.zip) [src2](https://danilw.github.io/godot-utils-and-other/2d_explossions/explossion_with_backbuffer_ex.zip) [live1](https://danilw.github.io/godot-utils-and-other/2d_explossions/web/no_fb_v0/explossion_with_backbuffer_ex.html) [live2](https://danilw.github.io/godot-utils-and-other/2d_explossions/web/feedback_v1/explossion_with_backbuffer_ex.html)
+**2d explossion effects** [video](https://youtu.be/h7C2-YMFn94) [src1](https://danilw.github.io/godot-utils-and-other/2d_explossions/explossion_no_bb.zip) [src2](https://danilw.github.io/godot-utils-and-other/2d_explossions/explossion_with_backbuffer_ex.zip) [live1](https://danilw.github.io/godot-utils-and-other/2d_explossions/web/no_fb_v0/explossion_with_backbuffer_ex.html) [live2](https://danilw.github.io/godot-utils-and-other/2d_explossions/web/feedback_v1/explossion_with_backbuffer_ex.html)
 ___
 
 *old:*
