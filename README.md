@@ -1,6 +1,6 @@
-**update 2019 (actual in 2020)**
+**update 2019 (actual in 2021)**
 
-gitlab mirror [https://gitlab.com/danilw/godot-utils-and-other](https://gitlab.com/danilw/godot-utils-and-other), untill I can update github repo I will (depends of github rules[(region block)](https://danilw.github.io/GLSL-howto/1.png) updates based on U.S. laws)
+gitlab mirror [https://gitlab.com/danilw/godot-utils-and-other](https://gitlab.com/danilw/godot-utils-and-other), EU mirror [https://notabug.org/danilw/godot-utils-and-other](https://notabug.org/danilw/godot-utils-and-other), untill I can update github repo I will (depends of github rules[(region block)](https://danilw.github.io/GLSL-howto/1.png) )
 
 # godot-utils-and-other
 **what is it** my test projects using Godot. I do not recomend use this code for learning.
@@ -10,9 +10,40 @@ ___
 
 **Licensing and this code** - in this repository used some sketchfab models that under CC-license, also music, and other resource that do not have Mit license. All used resources linked for every project, please check its license before use. My code under MIT license.
 
+
+Everything tested on Godot **3.3.2**
+
+___
+*New:*
+
 ___
 
-*new 2020:*
+### **3D Mirror in Mirror and postprocessing example**:
+
+Mirror that copy screen image with self from previous frame, and Postprocessing that need an "aditional buffer to save state"(as example used jpeg/DCT real time effect).
+
+[**Source code zip**](https://danilw.github.io/godot-utils-and-other/mirror_and_postproc/mirror_in_mirror_and_postproc.zip).
+
+[Web version](https://danilw.github.io/godot-utils-and-other/mirror_and_postproc/mirror_in_mirror_and_postprocessing.html).
+
+___
+
+### **Godot shadertoy**:
+
+**_updated_** version of "Shadertoy logic to Godot" [video](https://youtu.be/v48O7Nk_n4g). (old version linked under video)
+
+[**New source code zip file**](https://danilw.github.io/godot-utils-and-other/shadertoy_new_2021/src/Godot_shadertoy_v2new.zip).
+
+**New web version** to test [live link](https://danilw.github.io/godot-utils-and-other/shadertoy_new_2021/shadertoy.html).
+
+Added correct resize set `resize_Viewport_to_screen = true` in *scene.gd* to make resize work, fixed lots of bugs, example of mouse and keyboard. [Shadertoy test shader link](https://www.shadertoy.com/view/WlcBWr).
+
+___
+
+
+___
+
+*2020:*
 
 ___
 
@@ -179,7 +210,11 @@ ___
 
 *Warning: code very bad!* || Using lots of particles in Godot, in small demo-game.
 
-To build this project you need build Godot with module **futari-addon** (google it(gitlab) ot use this [link](https://gitlab.com/polymorphcool/futari-addon) ) *Binary versions*: [win64](https://danilw.github.io/godot-utils-and-other/a_rel_bw_game/bw_game_win64.zip) [linux64](https://danilw.github.io/godot-utils-and-other/a_rel_bw_game/bw_game_lin64.zip) [live/web](https://danilw.github.io/godot-utils-and-other/a_rel_bw_game/web/afg.html)(work only in Firefox [reason](https://github.com/godotengine/godot/issues/28573)) (native builds have Mipmap On, web build off)
+To build this project you need build Godot with module **futari-addon** (google it(gitlab) ot use this [link](https://gitlab.com/polymorphcool/futari-addon) ) to make futari-addon work in [Godot 3.3.2 look this fix](https://gitlab.com/polymorphcool/futari-addon/-/issues/9).
+
+[Playable web/bin version.](https://danilw.itch.io/particle-game-demo)
+
+Video [youtube link](https://youtu.be/jTmppCifnYE)
 ___
 
 ### **Dynamic sky and reflection**:
@@ -204,7 +239,7 @@ ___
 
 *old:*
 
-**Godot_shadertoy** very simple "Shadertoy logic to Godot" [video](https://youtu.be/v48O7Nk_n4g), [source repo](https://github.com/danilw/GLSL-howto/tree/master/Godot_shadertoy)
+**Godot_shadertoy** very simple "Shadertoy logic to Godot" [video](https://youtu.be/v48O7Nk_n4g)
 
 **Cubemap to panorama** convertor [live link](https://danilw.github.io/GLSL-howto/cubemap_to_panorama_js/cubemap_to_panorama.html) 
 
